@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/principal">
+
+    <fragment
+        android:id="@+id/principal"
+        android:name="com.example.practicajetpack.Principal"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_principal_to_browser"
+            app:destination="@id/browser" />
+        <action
+            android:id="@+id/action_principal_to_camera"
+            app:destination="@id/camera" />
+        <action
+            android:id="@+id/action_principal_to_calculadora"
+            app:destination="@id/calculadora" />
+    </fragment>
+    <fragment
+        android:id="@+id/browser"
+        android:name="com.example.practicajetpack.Browser"
+        android:label="fragment_browser"
+        tools:layout="@layout/fragment_browser" />
+    <fragment
+        android:id="@+id/camera"
+        android:name="com.example.practicajetpack.Camera"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/calculadora"
+        android:name="com.example.practicajetpack.Calculadora"
+        android:label="fragment_calculadora"
+        tools:layout="@layout/fragment_calculadora" >
+        <action
+            android:id="@+id/action_calculadora_to_suma"
+            app:destination="@id/suma" />
+        <action
+            android:id="@+id/action_calculadora_to_divide"
+            app:destination="@id/divide" />
+        <action
+            android:id="@+id/action_calculadora_to_resta"
+            app:destination="@id/resta" />
+    </fragment>
+    <fragment
+        android:id="@+id/suma"
+        android:name="com.example.practicajetpack.Suma"
+        android:label="fragment_suma"
+        tools:layout="@layout/fragment_suma" >
+        <argument
+            android:name="numero1"
+            app:argType="float" />
+        <argument
+            android:name="numero2"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/resta"
+        android:name="com.example.practicajetpack.Resta"
+        android:label="fragment_resta"
+        tools:layout="@layout/fragment_resta" >
+        <argument
+            android:name="numero1"
+            app:argType="float" />
+        <argument
+            android:name="numero2"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/divide"
+        android:name="com.example.practicajetpack.Divide"
+        android:label="fragment_divide"
+        tools:layout="@layout/fragment_divide" >
+        <argument
+            android:name="numero1"
+            app:argType="float" />
+        <argument
+            android:name="numero2"
+            app:argType="float" />
+    </fragment>
+</navigation>
